@@ -6,7 +6,7 @@
   flex-wrap: wrap;
   box-sizing: border-box;
   padding: $pad;
-  width: calc($days-size * 7 + $gap * 6 + $pad * 2);
+  width: calc($days-size * #{$cols} + $gap * (#{$cols} - 1) + $pad * 2);
   gap: $gap;
   max-width: 100%;
   overflow: hidden;
@@ -19,7 +19,7 @@
     width: $days-size;
     height: $days-size;
     background-color: $days-color;
-    border: $border solid #000;
+    border: $border;
     position: relative;
     transition: 0.5s;
 

@@ -7,7 +7,7 @@
   box-sizing: border-box;
   padding: $pad;
   width: calc($days-size * 7 + $gap * 6 + $pad * 2);
-  gap: 1px;
+  gap: $gap;
   max-width: 100%;
   overflow: hidden;
 
@@ -32,11 +32,14 @@
     @for $i-days from 1 through 31 {
       &:nth-child(#{$i-days})::before {
         content: '#{$i-days}';
-        pointer-events: none;
         font-family: Arial, Helvetica, sans-serif;
         font-size: $font-size;
         position: absolute;
+        pointer-events: none;
         color: $numbers-color;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
       }
     }
   }
